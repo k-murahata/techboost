@@ -5,18 +5,10 @@ public abstract class AbstractPerson {
 
 	public void speak() {
 		if (this.gender.equals("man")) {
-			System.out.println("I'am a man");
+			System.out.println("I'm a man");
 		}
 		if (this.gender.equals("woman")) {
-			System.out.println("I'am a woman");
+			System.out.println("I'm a woman");
 		}
-	}
-
-	public static void main(String[] args) {
-		Man man = new Man();
-		Woman woman = new Woman();
-		man.speak();
-		woman.speak();
-
 	}
 }
