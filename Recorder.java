@@ -7,27 +7,22 @@ public class Recorder {
 	public Map<String, String> record = new HashMap<String, String>();
 
 	public void rec(String key, String value) {
-		record.put(key, value);
-		System.out.println(key + "=" + value);
 
-		if (value.equals("Delete")) {
-
-		} else if (record.containsKey(key)) {
+		if (key.equals("") && value.equals("")) {
+			for (int i = 0; i <= record.size(); i++) {
+				record.remove(i);
+			}
+			System.out.println("Empty");
+		} else if (value.equals("")) {
+			System.out.println(record.get(key));
+		} else if (record.containsKey(key) && value.equals("Delete")) {
 			System.out.println(key + " deleted");
-		} else {
+		} else if (value.equals("Delete")) {
 			throw new IllegalArgumentException();
+		} else {
+			record.put(key, value);
+			System.out.println(key + "=" + value);
+
 		}
-	}
-
-	public void rec(String key) {
-		System.out.println(record.get(key));
-	}
-
-	public void rec() {
-		for (int i = 0; i < record.size(); i++) {
-			record.remove(i);
-		}
-		System.out.println("Empty");
-
 	}
 }
