@@ -1,1 +1,9 @@
-SELECT employee.first_name, employee.last_name, companies.name FROM users employee INNER JOIN companies ON employee.company_id = companies.id ORDER BY employee.id;
+SELECT
+    u.first_name,
+    u.last_name,
+    c.name
+FROM
+    users u
+    INNER JOIN companies c ON u.company_id = c.id
+ORDER BY
+    u.id;
